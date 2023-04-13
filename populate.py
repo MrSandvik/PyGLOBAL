@@ -1,7 +1,13 @@
 import database
-import re
+import sys
 from config import mssql_db, mssql_schema, data_type_map
 from functions import validate_data, format_value, insert_rows
+
+
+def print_progress(table, current, total):
+    percent = int(current / total * 100)
+    sys.stdout.write("\r" + f"Populating table: {table} - Progress: [{'#' * percent}{' ' * (100 - percent)}] {percent}%")
+    sys.stdout.flush()
 
 
 def populate_tables():
@@ -49,6 +55,12 @@ def populate_tables():
                 if len(all_rows) == 1000 or row_number == mssql_cursor.rowcount - 1:
                     insert_rows(mysql_cursor, table, columns, all_rows, f)
                     all_rows = []
+
+                print_progress(table, mssql_cursor.rowcount, mssql_cursor.rowcount)
+            
+            # print a full progress bar once all rows are done
+            print_progress(table, 100, 100)
+            print()
 
     mysql_cursor.close()
     mysql_conn.close()

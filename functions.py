@@ -43,6 +43,7 @@ def format_value(value, columns, mssql_cursor, idx):
     # strings
     elif isinstance(value, str):
         value = value.replace("'", "\\'")
+        value = value.replace("\\", "\\\\")
         value = value.replace('\r\n', '\\n').replace('\r', '\\n').replace('\n', '\\n')
         # Split the text into 10,000 character chunks
         chunks = [value[i:i + 10000] for i in range(0, len(value), 10000)]
@@ -85,4 +86,5 @@ def insert_rows(mysql_cursor, table, columns, rows, f):
         mysql_cursor.connection.close()
         print("Error inserting data into MySQL. Terminating execution.")
         exit(1)
+
 
