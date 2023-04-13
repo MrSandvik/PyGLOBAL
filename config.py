@@ -21,6 +21,7 @@ data_type_map = {
     'decimal': 'decimal',
     'float': 'float',
     'int': 'int',
+    'image': 'longblob',
     'money': 'decimal',
     'nchar': 'char',
     'ntext': 'text',

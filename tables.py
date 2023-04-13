@@ -1,5 +1,5 @@
 import database
-from config import mysql_database, mssql_db, mssql_schema, data_type_map
+from config import mysql_database, data_type_map
 
 def create_tables():
     mysql_conn = database.connect_to_mysql()
@@ -22,16 +22,26 @@ def create_tables():
     mssql_tables = [table[0] for table in mssql_cursor.fetchall()]
 
     for table in mssql_tables:
-        mssql_cursor.execute(f"SELECT COLUMN_NAME, DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{table}';")
+        mssql_cursor.execute(f"SELECT COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{table}';")
         columns = []
         for column in mssql_cursor.fetchall():
             # Map the MSSQL data type to a MySQL data type
             mysql_data_type = data_type_map.get(column[1].lower(), 'varchar')
-            if column[0] == 'Name':
-                mysql_data_type = 'varchar(255)'
+            if mysql_data_type == 'varchar':
+                if column[2]:
+                    if column[2] == -1:  # This means MAX
+                        mysql_data_type = 'text'
+                    else:
+                        mysql_data_type = f'varchar({column[2]})'
+                else:
+                    mysql_data_type = 'varchar'
+            elif mysql_data_type == 'binary':
+                mysql_data_type = f'binary({column[2]})' if column[2] else 'binary'
+            elif mysql_data_type == 'varbinary':
+                mysql_data_type = f'varbinary({column[2]})' if column[2] else 'varbinary'
             columns.append(f"`{column[0]}` {mysql_data_type}")
 
-        create_query = f"CREATE TABLE IF NOT EXISTS `{table}` (`id` INT NOT NULL AUTO_INCREMENT,{','.join(columns)}, PRIMARY KEY (`id`))"
+        create_query = f"CREATE TABLE IF NOT EXISTS `{table}` (`myPK` INT NOT NULL AUTO_INCREMENT,{','.join(columns)}, PRIMARY KEY (`myPK`))"
         print(f"Creating table {table} with query: {create_query}")
         mysql_cursor.execute(create_query)
 
@@ -41,4 +51,3 @@ def create_tables():
     mssql_conn.close()
 
     print("Tables created successfully!")
-
