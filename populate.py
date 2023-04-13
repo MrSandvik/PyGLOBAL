@@ -1,6 +1,7 @@
 import database
 import re
 from config import mssql_db, mssql_schema, data_type_map
+from functions import validate_data
 
 def populate_tables():
     mysql_conn = database.connect_to_mysql()
@@ -16,17 +17,25 @@ def populate_tables():
         for table in mssql_tables:
             mssql_cursor.execute(f"SELECT COLUMN_NAME, DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{table}';")
             columns = []
+            mssql_data_types = []
             for column in mssql_cursor.fetchall():
                 # Map the MSSQL data type to a MySQL data type
                 mysql_data_type = data_type_map.get(column[1].lower(), 'varchar')
                 if column[0] == 'Name':
                     mysql_data_type = 'varchar(255)'
                 columns.append(f"`{column[0]}` {mysql_data_type}")
+                mssql_data_types.append(column[1])
 
             mssql_cursor.execute(f"SELECT * FROM {mssql_db}.{mssql_schema}.{table};")
 
             all_rows = []
             for row in mssql_cursor.fetchall():
+                try:
+                    validate_data(columns, mssql_data_types, row)
+                except ValueError as e:
+                    f.write(f"Validation error: {str(e)}\n")
+                    continue
+
                 values = []
                 for idx, value in enumerate(row):
                     #strings
@@ -70,10 +79,13 @@ def populate_tables():
                     f.write(f"Inserted {len(all_rows)} rows into {table}\n")
                 except Exception as e:
                     f.write(f"Error inserting into {table}: {str(e)}\n")
-                    
+
         mysql_cursor.close()
         mysql_conn.close()
         mssql_cursor.close()
         mssql_conn.close()
 
     print("Tables populated successfully!")
+
+if __name__ == "__main__":
+    populate_tables()
