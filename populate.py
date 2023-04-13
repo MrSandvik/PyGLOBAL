@@ -1,7 +1,8 @@
 import database
 import re
 from config import mssql_db, mssql_schema, data_type_map
-from functions import validate_data
+from functions import validate_data, format_value, insert_rows
+
 
 def populate_tables():
     mysql_conn = database.connect_to_mysql()
@@ -40,68 +41,20 @@ def populate_tables():
 
                 values = []
                 for idx, value in enumerate(row):
-                    #empty strings
-                    if value == '':
-                        values.append("''")
+                    values.append(format_value(value, columns, mssql_cursor, idx))
 
-                    #strings
-                    elif isinstance(value, str): 
-                        value = value.replace("'", "\\'")
-                        value = value.replace('\r\n', '\\n').replace('\r', '\\n').replace('\n', '\\n')
-                        # Split the text into 10,000 character chunks
-                        chunks = [value[i:i+10000] for i in range(0, len(value), 10000)]
-                        # Add each chunk to the list of values
-                        for chunk in chunks:
-                            values.append(f"'{chunk}'")
-                                
-                    #dates/datetimes
-                    elif re.match(r'\d{4}-\d{2}-\d{2}', str(value)):
-                        values.append('NULL' if value is None else f"'{str(value)}'")
-
-                    #bytes
-                    elif isinstance(value, bytes):
-                        column_data_type = next((column[1] for column in mssql_cursor.description if column[0] == columns[idx].split()[0]), None)
-                        if column_data_type and (column_data_type.lower() == 'binary' or column_data_type.lower() == 'varbinary'):
-                            value = "0x" + value.hex()
-                        else:
-                            value = f"X'{value.hex()}'"
-                        values.append(str(value))
-
-                    #numbers
-                    else:
-                        values.append('NULL' if value is None else str(value))
-
-                        
                 all_rows.append(f"({','.join(['DEFAULT'] + values)})")
 
-            # Check if all_rows is not empty
-            if all_rows:
-                # Construct the insert query
-                insert_query = f"INSERT INTO `{table}` ({','.join(['myPK'] + [column.split()[0] for column in columns])}) VALUES {','.join(all_rows)}"
-                try:
-                    # Execute the insert query
-                    mysql_cursor.execute(insert_query)
-                    mysql_conn.commit()
-                    f.write(f"Inserted {len(all_rows)} rows into {table}\n")
-                except Exception as e:
-                    mysql_conn.rollback()
-                    f.write(f"Error inserting into {table}: {str(e)}\n")
-                    f.write(f"Query: \n {insert_query}\n\n")
-                    mysql_cursor.close()
-                    mysql_conn.close()
-                    mssql_cursor.close()
-                    mssql_conn.close()
-                    print("Error inserting data into MySQL. Terminating execution.")
-                    return
-                all_rows = []
-            else:
-                f.write(f"No data to insert into {table}\n")
-            
+                # If we have reached max_records or the last row, insert the rows
+                if len(all_rows) == 1000 or row_number == mssql_cursor.rowcount - 1:
+                    insert_rows(mysql_cursor, table, columns, all_rows, f)
+                    all_rows = []
+
     mysql_cursor.close()
     mysql_conn.close()
     mssql_cursor.close()
     mssql_conn.close()
 
-print("Tables populated successfully!")
+    print("Tables populated successfully!")
 
-           
+
