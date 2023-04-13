@@ -1,5 +1,4 @@
 import database
-import re
 from config import mysql_database, mssql_db, mssql_schema, data_type_map
 
 def create_tables():
@@ -36,49 +35,10 @@ def create_tables():
         print(f"Creating table {table} with query: {create_query}")
         mysql_cursor.execute(create_query)
 
-        mssql_cursor.execute(f"SELECT * FROM {mssql_db}.{mssql_schema}.{table};")
-        for row in mssql_cursor.fetchall():
-            values = []
-            for value in row:
-                #strings
-                if isinstance(value, str): 
-                    value = value.replace("'", "\\'")
-                    value = value.replace('\r\n', '\\n').replace('\r', '\\n').replace('\n', '\\n')
-                    # Split the text into 10,000 character chunks
-                    chunks = [value[i:i+10000] for i in range(0, len(value), 10000)]
-                    # Add each chunk to the list of values
-                    for chunk in chunks:
-                        values.append(f"'{chunk}'")
-                
-                #dates/datetimes
-                elif re.match(r'\d{4}-\d{2}-\d{2}', str(value)):
-                    values.append(f"'{str(value)}'")
-
-                #bytes
-                elif isinstance(value, bytes):
-                    column_data_type = next((column[1] for column in mssql_cursor.description if column[0] == columns[i].split()[0]), None)
-                    if column_data_type.lower() == 'binary' or column_data_type.lower() == 'varbinary':
-                        value = "0x" + value.hex()
-
-                #numbers
-                else:
-                    values.append(str(value))
-
-            # Construct the insert query
-            insert_query = f"INSERT INTO `{table}` ({','.join(['id'] + [column.split()[0] for column in columns])}) VALUES (DEFAULT,{','.join(values)})"
-            print(f"Query: \n {insert_query}")
-            #input()
-            # Execute the insert query if all values in the row have been processed
-            if len(values) == len(columns):
-                mysql_cursor.execute(insert_query)
-            
-        mysql_conn.commit()
-
-
     mysql_cursor.close()
     mysql_conn.close()
     mssql_cursor.close()
     mssql_conn.close()
 
     print("Tables created successfully!")
-    
+
