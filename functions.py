@@ -1,12 +1,17 @@
 import re
 from datetime import datetime
+from decimal import Decimal
 
 def is_valid_value(value, mssql_data_type):
-    if mssql_data_type == 'int' and not isinstance(value, int):
+    if value is None:
+        return True
+    elif mssql_data_type == 'int' and not isinstance(value, int):
         return False
     elif mssql_data_type in ('varchar', 'nvarchar', 'text', 'ntext', 'char', 'nchar') and not isinstance(value, str):
         return False
-    elif mssql_data_type in ('bigint', 'smallint', 'tinyint', 'decimal', 'numeric', 'float', 'real', 'money', 'smallmoney') and not isinstance(value, (int, float)):
+    elif mssql_data_type in ('bigint', 'smallint', 'tinyint', 'numeric', 'float', 'real', 'money', 'smallmoney') and not isinstance(value, (int, float, Decimal)):
+        return False
+    elif mssql_data_type == 'decimal' and not isinstance(value, Decimal):
         return False
     elif mssql_data_type in ('bit') and not isinstance(value, bool):
         return False
@@ -21,9 +26,10 @@ def is_valid_value(value, mssql_data_type):
     else:
         return True
 
-def validate_data(columns, mssql_data_types, row):
+def validate_data(table_name, row_number, columns, mssql_data_types, row):
     for idx, value in enumerate(row):
         column_name = columns[idx].split()[0]
         mssql_data_type = mssql_data_types[idx]
         if not is_valid_value(value, mssql_data_type):
-            raise ValueError(f"Invalid value '{value}' for column '{column_name}' with data type '{mssql_data_type}'")
+            raise ValueError(f"Invalid value '{value}' for column '{column_name}' with data type '{mssql_data_type}' in table '{table_name}', row {row_number}")
+

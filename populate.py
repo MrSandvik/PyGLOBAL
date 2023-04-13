@@ -10,12 +10,14 @@ def populate_tables():
     mssql_conn = database.connect_to_mssql()
     mssql_cursor = mssql_conn.cursor()
 
-    mssql_cursor.execute("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE';")
+    mssql_cursor.execute(f"SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE' AND TABLE_SCHEMA = '{mssql_schema}';")
     mssql_tables = [table[0] for table in mssql_cursor.fetchall()]
 
     with open('log.txt', 'w') as f:
         for table in mssql_tables:
             mssql_cursor.execute(f"SELECT COLUMN_NAME, DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{table}';")
+            f.write(f"Populating table: {table}...\n")
+            print(f"Populating table: {table}...")
             columns = []
             mssql_data_types = []
             for column in mssql_cursor.fetchall():
@@ -29,17 +31,21 @@ def populate_tables():
             mssql_cursor.execute(f"SELECT * FROM {mssql_db}.{mssql_schema}.{table};")
 
             all_rows = []
-            for row in mssql_cursor.fetchall():
+            for row_number, row in enumerate(mssql_cursor.fetchall()):
                 try:
-                    validate_data(columns, mssql_data_types, row)
+                    validate_data(table, row_number, columns, mssql_data_types, row)
                 except ValueError as e:
                     f.write(f"Validation error: {str(e)}\n")
                     continue
 
                 values = []
                 for idx, value in enumerate(row):
+                    #empty strings
+                    if value == '':
+                        values.append("''")
+
                     #strings
-                    if isinstance(value, str): 
+                    elif isinstance(value, str): 
                         value = value.replace("'", "\\'")
                         value = value.replace('\r\n', '\\n').replace('\r', '\\n').replace('\n', '\\n')
                         # Split the text into 10,000 character chunks
@@ -47,10 +53,10 @@ def populate_tables():
                         # Add each chunk to the list of values
                         for chunk in chunks:
                             values.append(f"'{chunk}'")
-                    
+                                
                     #dates/datetimes
                     elif re.match(r'\d{4}-\d{2}-\d{2}', str(value)):
-                        values.append(f"'{str(value)}'")
+                        values.append('NULL' if value is None else f"'{str(value)}'")
 
                     #bytes
                     elif isinstance(value, bytes):
@@ -64,6 +70,7 @@ def populate_tables():
                     #numbers
                     else:
                         values.append('NULL' if value is None else str(value))
+
                         
                 all_rows.append(f"({','.join(['DEFAULT'] + values)})")
 
@@ -71,21 +78,30 @@ def populate_tables():
             if all_rows:
                 # Construct the insert query
                 insert_query = f"INSERT INTO `{table}` ({','.join(['myPK'] + [column.split()[0] for column in columns])}) VALUES {','.join(all_rows)}"
-                f.write(f"Query: \n {insert_query}\n")
                 try:
                     # Execute the insert query
                     mysql_cursor.execute(insert_query)
                     mysql_conn.commit()
                     f.write(f"Inserted {len(all_rows)} rows into {table}\n")
                 except Exception as e:
+                    mysql_conn.rollback()
                     f.write(f"Error inserting into {table}: {str(e)}\n")
+                    f.write(f"Query: \n {insert_query}\n\n")
+                    mysql_cursor.close()
+                    mysql_conn.close()
+                    mssql_cursor.close()
+                    mssql_conn.close()
+                    print("Error inserting data into MySQL. Terminating execution.")
+                    return
+                all_rows = []
+            else:
+                f.write(f"No data to insert into {table}\n")
+            
+    mysql_cursor.close()
+    mysql_conn.close()
+    mssql_cursor.close()
+    mssql_conn.close()
 
-        mysql_cursor.close()
-        mysql_conn.close()
-        mssql_cursor.close()
-        mssql_conn.close()
+print("Tables populated successfully!")
 
-    print("Tables populated successfully!")
-
-if __name__ == "__main__":
-    populate_tables()
+           
