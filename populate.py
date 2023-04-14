@@ -1,29 +1,12 @@
-# populate.py
-import database
 import sys
 from config import mssql_db, mssql_schema, data_type_map, batch_size
 from functions import validate_data, format_value, insert_rows, populate_progress
+import database
 
 batches = 0
 total_batches = 0
 total_tables = 0
 
-def print_progress(table, current, total, tableIndex):
-    progress_width = 50
-    try:
-        total_int = int(total)
-    except ValueError:
-        total_int = 100
-    percent = int(current / total_int * 100)
-    completed_width = int(progress_width * current / total_int)
-    remaining_width = progress_width - completed_width
-    progress_bar = '█' * completed_width + '░' * remaining_width
-    batches = int(current / batch_size) + 1
-    total_batches = int(total_int / batch_size) + 1
-    progress_str = f"Populating table: \x1b[1m{table:<40}\x1b[0m | \x1b[32m{progress_bar}\x1b[0m | {percent:>3}% | {batches}/{total_batches} batches | table {tableIndex} of {total_tables}"
-    sys.stdout.write('\r' + ' ' * len(progress_str) + '\r')
-    sys.stdout.write(progress_str)
-    sys.stdout.flush()
 
 def populate_tables():
     mysql_conn = database.connect_to_mysql()
@@ -32,7 +15,8 @@ def populate_tables():
     mssql_conn = database.connect_to_mssql()
     mssql_cursor = mssql_conn.cursor()
 
-    mssql_cursor.execute(f"SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE' AND TABLE_SCHEMA = '{mssql_schema}';")
+    mssql_cursor.execute(
+        f"SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE' AND TABLE_SCHEMA = '{mssql_schema}';")
     mssql_tables = [table[0] for table in mssql_cursor.fetchall()]
     mssql_tables.sort()
     global total_tables
@@ -40,7 +24,8 @@ def populate_tables():
 
     with open('log.txt', 'a') as f:
         for index, table in enumerate(mssql_tables, start=1):
-            mssql_cursor.execute(f"SELECT COLUMN_NAME, DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{table}';")
+            mssql_cursor.execute(
+                f"SELECT COLUMN_NAME, DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{table}';")
             mssql_rowcount = mssql_cursor.fetchone()[0]
             f.write(f"Populating table: {table}...\n")
             columns = []
@@ -59,7 +44,7 @@ def populate_tables():
 
             all_rows = []
             progress_count = 0
-            for row_number, row in enumerate(mssql_cursor.fetchall()):
+            for row_number, row in enumerate(mssql_cursor):
                 try:
                     validate_data(table, row_number, columns, mssql_data_types, row)
                 except ValueError as e:
@@ -77,10 +62,10 @@ def populate_tables():
                     insert_rows(mysql_cursor, table, columns, all_rows, f)
                     all_rows = []
                 progress_count += 1
-                populate_progress(table, progress_count, mssql_rowcount, tableIndex)
-                
+                populate_progress(table, progress_count, mssql_rowcount, tableIndex, total_tables)
+
             # print a full progress bar once all rows are done
-            populate_progress(table, mssql_rowcount, mssql_rowcount, tableIndex)
+            populate_progress(table, mssql_rowcount, mssql_rowcount, tableIndex, total_tables)
             sys.stdout.write("\n")
             sys.stdout.flush()
 
@@ -90,5 +75,3 @@ def populate_tables():
     mssql_conn.close()
 
     print("Tables populated successfully!")
-
-
