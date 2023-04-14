@@ -1,3 +1,5 @@
-desktop.ini
-sftp.json
 .vscode
+__pycache__
+desktop.ini
+log.txt
+sftp.json

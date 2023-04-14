@@ -5,7 +5,7 @@ import config
 
 
 def connect_to_mssql():
-        conn_str = 'DRIVER={FreeTDS};SERVER='+config.mssql_server+';PORT=1433;DATABASE='+config.mssql_db+';UID='+config.mssql_user+';PWD='+config.mssql_password+';TDS_Version=7.4'
+        conn_str = 'DRIVER='+config.mssql_driver+';SERVER='+config.mssql_server+';PORT=1433;DATABASE='+config.mssql_db+';UID='+config.mssql_user+';PWD='+config.mssql_password+';TDS_Version=7.4'
         conn = pyodbc.connect(conn_str)
         return conn
 

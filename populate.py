@@ -29,7 +29,7 @@ def populate_tables():
             mssql_rowcount = mssql_cursor.fetchone()[0]
             
             # Start data type processing
-            mssql_cursor.execute(f"SELECT COLUMN_NAME, DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{table}';")
+            mssql_cursor.execute(f"SELECT COLUMN_NAME, DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{table}' AND TABLE_SCHEMA = '{mssql_schema}';")
             
             columns = []
             mssql_data_types = []

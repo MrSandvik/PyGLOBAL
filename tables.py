@@ -39,8 +39,9 @@ def create_tables():
 
     with open('log.txt', 'w') as f:
         for table in mssql_tables:
-            mssql_cursor.execute(f"SELECT COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, NUMERIC_PRECISION, NUMERIC_SCALE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{table}';")
+            mssql_cursor.execute(f"SELECT COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, NUMERIC_PRECISION, NUMERIC_SCALE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{table}' AND TABLE_SCHEMA = '{mssql_schema}';")
             columns = []
+            
             for column in mssql_cursor.fetchall():
                 # Map the MSSQL data type to a MySQL data type
                 mysql_data_type = data_type_map.get(column[1].lower(), 'varchar')
@@ -63,7 +64,7 @@ def create_tables():
                     scale = column[4]
                     mysql_data_type = f'decimal({precision},{scale})'
                 columns.append(f"`{column[0]}` {mysql_data_type}")
-
+                
             create_query = f"CREATE TABLE IF NOT EXISTS `{table}` (`myPK` INT NOT NULL AUTO_INCREMENT,{','.join(columns)}, PRIMARY KEY (`myPK`))"
             f.write(f"Creating table {table} with query: {create_query}\n\n")
             mysql_cursor.execute(create_query)
@@ -71,7 +72,7 @@ def create_tables():
             print_progress(table_index, table_count, f"{table_index}/{table_count}")
             
         print()
-        f.write("Tables created successfully!\n")
+        f.write("Data cloned successfully!\n")
         f.close()
 
     mysql_cursor.close()

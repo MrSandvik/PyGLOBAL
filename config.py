@@ -1,11 +1,21 @@
 # config.py
-mssql_server = "192.168.1.129"
-mssql_db = "MarLogASGLOBALData"
-mssql_schema = "MarLogAS"
+# Microsoft SQL Server connection settings
+odbc_driver = {
+    1: '{FreeTDS}',
+    2: '{ODBC Driver 17 for SQL Server}',
+    3: '{SQL Server Native Client 11.0}'
+}
+
+mssql_driver = odbc_driver[2]
+mssql_server = "192.168.1.165"
+mssql_db = "protel"
+mssql_schema = "proteluser"
 mssql_user = "sa"
 mssql_password = "Syndicate4!"
 
-mysql_server = "localhost"
+
+# mySQL Server connection settings
+mysql_server = "orion"
 mysql_user = "root"
 mysql_password = "(Volvo90V)"
 mysql_database = mssql_db
