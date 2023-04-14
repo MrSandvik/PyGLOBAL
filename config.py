@@ -9,6 +9,9 @@ mysql_user = "root"
 mysql_password = "(Volvo90V)"
 mysql_database = mssql_db
 
+# Maximum number of records per INSERT statement
+batch_size = 1000
+
 # Define a dictionary to map data types between MSSQL and MySQL
 data_type_map = {
     'bigint': 'bigint',
