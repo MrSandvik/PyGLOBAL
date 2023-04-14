@@ -77,10 +77,10 @@ def populate_tables():
                     insert_rows(mysql_cursor, table, columns, all_rows, f)
                     all_rows = []
                 progress_count += 1
-                print_progress(table, progress_count, mssql_rowcount, tableIndex)
+                populate_progress(table, progress_count, mssql_rowcount, tableIndex)
                 
             # print a full progress bar once all rows are done
-            print_progress(table, mssql_rowcount, mssql_rowcount, tableIndex)
+            populate_progress(table, mssql_rowcount, mssql_rowcount, tableIndex)
             sys.stdout.write("\n")
             sys.stdout.flush()
 
