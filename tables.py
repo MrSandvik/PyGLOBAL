@@ -36,7 +36,7 @@ def create_tables():
     table_count = len(mssql_tables)
     table_index = 0
 
-    with open('log.txt', 'a') as f:
+    with open('log.txt', 'w') as f:
         for table in mssql_tables:
             mssql_cursor.execute(f"SELECT COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, NUMERIC_PRECISION, NUMERIC_SCALE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{table}';")
             columns = []
@@ -62,7 +62,7 @@ def create_tables():
                 columns.append(f"`{column[0]}` {mysql_data_type}")
 
             create_query = f"CREATE TABLE IF NOT EXISTS `{table}` (`myPK` INT NOT NULL AUTO_INCREMENT,{','.join(columns)}, PRIMARY KEY (`myPK`))"
-            f.write(f"Creating table {table} with query: {create_query}")
+            f.write(f"Creating table {table} with query: {create_query}\n\n")
             mysql_cursor.execute(create_query)
             table_index += 1
             print_progress(table_index, table_count, f"{table_index}/{table_count}")
