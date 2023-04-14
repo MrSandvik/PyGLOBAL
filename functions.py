@@ -93,18 +93,20 @@ def insert_rows(mysql_cursor, table, columns, rows, f):
 
 def populate_progress(table, current, total, tableIndex, batch_size, total_tables):
     progress_width = 50
-    try:
-        total_int = int(total)
-    except ValueError:
-        total_int = 100
-    percent = int(current / total_int * 100)
-    completed_width = int(progress_width * current / total_int)
+    if int(total) == 0:
+        current = 100
+        total = 100
+        percent = 100
+    else:
+        percent = int(current / total * 100)
+
+    percent = int(current / total * 100)
+    completed_width = int(progress_width * current / total)
     remaining_width = progress_width - completed_width
     progress_bar = '█' * completed_width + '░' * remaining_width
     batches = int(current / batch_size) + 1
-    total_batches = int(total_int / batch_size) + 1
+    total_batches = int(total / batch_size) + 1
     progress_str = f"Populating table: \x1b[1m{table:<40}\x1b[0m | \x1b[32m{progress_bar}\x1b[0m | {percent:>3}% | {batches}/{total_batches} batches | table {tableIndex} of {total_tables}"
     sys.stdout.write('\r' + ' ' * len(progress_str) + '\r')
     sys.stdout.write(progress_str)
     sys.stdout.flush()
-
