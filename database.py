@@ -1,16 +1,13 @@
-import pymssql
+# database.py
 import pymysql
+import pyodbc
 import config
 
 
 def connect_to_mssql():
-    return pymssql.connect(
-        server=config.mssql_server,
-        database=config.mssql_db,
-        user=config.mssql_user,
-        password=config.mssql_password,
-        port=1433
-    )
+        conn_str = 'DRIVER={FreeTDS};SERVER='+config.mssql_server+';PORT=1433;DATABASE='+config.mssql_db+';UID='+config.mssql_user+';PWD='+config.mssql_password+';TDS_Version=7.4'
+        conn = pyodbc.connect(conn_str)
+        return conn
 
 
 def connect_to_mysql():

@@ -1,5 +1,6 @@
+# tables.py
 import database
-from config import mysql_database, mssql_schema, data_type_map
+from config import mysql_database, mssql_schema, data_type_map, maxVarchar
 import sys
 
 def print_progress(current, total, tables):
@@ -46,6 +47,8 @@ def create_tables():
                 if mysql_data_type == 'varchar':
                     if column[2]:
                         if column[2] == -1:  # This means MAX
+                            mysql_data_type = 'text'
+                        elif column[2] > maxVarchar:
                             mysql_data_type = 'text'
                         else:
                             mysql_data_type = f'varchar({column[2]})'

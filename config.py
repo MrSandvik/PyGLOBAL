@@ -1,3 +1,4 @@
+# config.py
 mssql_server = "192.168.1.129"
 mssql_db = "MarLogASGLOBALData"
 mssql_schema = "MarLogAS"
@@ -11,6 +12,9 @@ mysql_database = mssql_db
 
 # Maximum number of records per INSERT statement
 batch_size = 1000
+
+# Maximum varchar size before converting to text data type
+maxVarchar = 1000
 
 # Define a dictionary to map data types between MSSQL and MySQL
 data_type_map = {
