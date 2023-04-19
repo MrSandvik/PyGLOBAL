@@ -2,4 +2,6 @@
 __pycache__
 desktop.ini
 log.txt
+check.txt
 sftp.json
+progress.db

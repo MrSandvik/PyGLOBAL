@@ -1,8 +1,11 @@
 # functions.py
+
 import sys
 import re
+import hashlib
 from datetime import datetime
 from decimal import Decimal
+from config import mssql_db, mssql_schema, mysql_database
 
 
 def is_valid_value(value, mssql_data_type):
@@ -30,12 +33,22 @@ def is_valid_value(value, mssql_data_type):
         return True
 
 
+def check_existing(mysql_cursor, table, row_hash, f):
+    mysql_cursor.execute(f"SELECT COUNT(*) FROM `{table}` WHERE `MyChecksum` = {row_hash};")
+    count = mysql_cursor.fetchone()[0]
+    return count > 0
+
+
 def validate_data(table_name, row_number, columns, mssql_data_types, row):
     for idx, value in enumerate(row):
         column_name = columns[idx].split()[0]
         mssql_data_type = mssql_data_types[idx]
         if not is_valid_value(value, mssql_data_type):
             raise ValueError(f"Invalid value '{value}' for column '{column_name}' with data type '{mssql_data_type}' in table '{table_name}', row {row_number}")
+
+
+def get_row_hash(row):
+    return "'" + hashlib.md5("".join(str(value) for value in row).encode("utf-8")).hexdigest() + "'"
 
 
 def format_value(value, columns, mssql_cursor, idx):
@@ -75,7 +88,7 @@ def format_value(value, columns, mssql_cursor, idx):
 
 def insert_rows(mysql_cursor, table, columns, rows, f):
     # Construct the insert query
-    insert_query = f"INSERT INTO `{table}` ({','.join(['myPK'] + [column.split()[0] for column in columns])}) VALUES {','.join(rows)}"
+    insert_query = f"INSERT INTO `{table}` ({','.join(['myPK', 'MyChecksum'] + [column.split()[0] for column in columns])}) VALUES {','.join(rows)}"
     try:
         # Execute the insert query
         mysql_cursor.execute(insert_query)
@@ -91,7 +104,28 @@ def insert_rows(mysql_cursor, table, columns, rows, f):
         exit(1)
 
 
-def populate_progress(table, current, total, tableIndex, batch_size, total_tables):
+def update_existing_tables(mysql_cursor, mssql_cursor, tables_to_populate, columns):
+    for index, table in enumerate(tables_to_populate, start=1):
+
+        # Fetch all records in the current table from both databases
+        mssql_cursor.execute(f"SELECT * FROM {mssql_db}.{mssql_schema}.{table};")
+        mysql_cursor.execute(f"SELECT * FROM {mysql_database}.{table};")
+
+        # Get row hashes for each record in both databases
+        mssql_rows = {get_row_hash(row): row for row in mssql_cursor.fetchall()}
+        mysql_rows = {get_row_hash(row[1:]): row for row in mysql_cursor.fetchall()}
+
+        # Find rows that need to be updated
+        rows_to_update = {row_hash: mssql_rows[row_hash] for row_hash in mssql_rows if row_hash not in mysql_rows}
+
+        # Update rows in the MySQL database
+        for row_hash, row in rows_to_update.items():
+            row_data = [format_value(value, columns, mssql_cursor, idx) for idx, value in enumerate(row)]
+            row_data_str = ', '.join([f"{columns[idx].split(' ')[0]} = {value}" for idx, value in enumerate(row_data)])
+            mysql_cursor.execute(f"UPDATE {table} SET {row_data_str} WHERE `hash` = '{row_hash}';")
+
+
+def populate_progress(table, current, total, tableIndex, batch_size, total_tables, title):
     progress_width = 50
     if int(total) == 0:
         current = 100
@@ -106,7 +140,7 @@ def populate_progress(table, current, total, tableIndex, batch_size, total_table
     progress_bar = '█' * completed_width + '░' * remaining_width
     batches = int(current / batch_size) + 1
     total_batches = int(total / batch_size) + 1
-    progress_str = f"Populating table: \x1b[1m{table:<40}\x1b[0m | \x1b[32m{progress_bar}\x1b[0m | {percent:>3}% | {batches}/{total_batches} batches | table {tableIndex} of {total_tables}"
+    progress_str = f"{title:.<16}: \x1b[1m{table:<40}\x1b[0m | \x1b[32m{progress_bar}\x1b[0m | {percent:>3}% | {batches}/{total_batches} batches | table {tableIndex} of {total_tables}"
     sys.stdout.write('\r' + ' ' * len(progress_str) + '\r')
     sys.stdout.write(progress_str)
     sys.stdout.flush()

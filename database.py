@@ -1,19 +1,18 @@
 # database.py
 import pymysql
 import pyodbc
-import config
+from config import mssql_driver, mssql_server, mssql_port, mssql_db, mssql_user, mssql_password, mssql_encrypt, mssql_trust_cert, mysql_server, mysql_user, mysql_password, mysql_database
 
 
 def connect_to_mssql():
-        conn_str = 'DRIVER='+config.mssql_driver+';SERVER='+config.mssql_server+';PORT=1433;DATABASE='+config.mssql_db+';UID='+config.mssql_user+';PWD='+config.mssql_password+';TDS_Version=7.4'
+        conn_str = f'DRIVER={mssql_driver};SERVER={mssql_server};PORT={mssql_port};DATABASE={mssql_db};UID={mssql_user};PWD={mssql_password};Encrypt={mssql_encrypt};TrustServerCertificate={mssql_trust_cert};TDS_Version=7.4'
         conn = pyodbc.connect(conn_str)
         return conn
 
 
 def connect_to_mysql():
     return pymysql.connect(
-        host=config.mysql_server,
-        user=config.mysql_user,
-        password=config.mysql_password,
-        database=config.mysql_database
+        host=mysql_server,
+        user=mysql_user,
+        password=mysql_password
     )

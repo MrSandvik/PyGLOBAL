@@ -1,13 +1,17 @@
+#populate.py
+
 import database
 import sys
-from config import mssql_db, mssql_schema, data_type_map, batch_size
-from functions import validate_data, format_value, insert_rows, populate_progress
+from config import mssql_db, mssql_schema, mysql_database, data_type_map, batch_size
+from functions import validate_data, format_value, insert_rows, populate_progress, get_row_hash, update_existing_tables, check_existing
 
 total_tables = 0
 
-def populate_tables():
+def populate_tables(mode, tables_to_process = None):
+
     mysql_conn = database.connect_to_mysql()
     mysql_cursor = mysql_conn.cursor()
+    mysql_cursor.execute(f"USE {mysql_database};")
 
     mssql_conn = database.connect_to_mssql()
     mssql_cursor = mssql_conn.cursor()
@@ -16,12 +20,38 @@ def populate_tables():
     mssql_tables = [table[0] for table in mssql_cursor.fetchall()]
     mssql_tables.sort()
 
+    if tables_to_process is not None:
+        tables_to_populate = tables_to_process
+    else:
+        tables_to_populate = mssql_tables
+
     # Get total number of tables
     global total_tables
-    total_tables = len(mssql_tables)
+    total_tables = len(tables_to_populate)
+
+
+    if mode == "repopulate":
+        # Truncate all tables in mysql_db
+        mysql_cursor.execute("SHOW TABLES")
+        all_tables = [table[0] for table in mysql_cursor.fetchall()]
+
+        for table in all_tables:
+            mysql_cursor.execute(f"TRUNCATE TABLE {table};")
+            mysql_conn.commit()
+
+    if mode == "update":
+        # Implement logic to update existing tables with new records
+        update_existing_tables(mysql_cursor, mssql_cursor, tables_to_populate, columns)
+        mysql_conn.commit()
+
+
+    if mode == "diff":
+        # Implement logic to compare contents of each table and output report of changes
+        pass
     
     with open('log.txt', 'a') as f:
-        for index, table in enumerate(mssql_tables, start=1):
+        for index, table in enumerate(tables_to_populate, start=1):
+
             f.write(f"Populating table: {table}...\n")
 
             # Fetching number of records in current table
@@ -40,7 +70,7 @@ def populate_tables():
                     mysql_data_type = 'varchar(255)'
                 columns.append(f"`{column[0]}` {mysql_data_type}")
                 mssql_data_types.append(column[1])
-
+            
             # Fetch all records in current table
             mssql_cursor.execute(f"SELECT * FROM {mssql_db}.{mssql_schema}.{table};")
 
@@ -48,35 +78,47 @@ def populate_tables():
             all_rows = []
             progress_count = 0
             for row_number, row in enumerate(mssql_cursor.fetchall()):
+                populate_progress(table, progress_count, mssql_rowcount, tableIndex, batch_size, total_tables, "Checking table")            
                 try:
+                    row_hash = get_row_hash(row)
                     validate_data(table, row_number, columns, mssql_data_types, row)
                 except ValueError as e:
                     f.write(f"Validation error: {str(e)}\n")
                     continue
 
+                # Check if the row already exists, and if so, skip it
+                if check_existing(mysql_cursor, table, row_hash, f):
+                    continue
+
                 values = []
                 for idx, value in enumerate(row):
                     values.append(format_value(value, columns, mssql_cursor, idx))
-                
-                all_rows.append(f"({','.join(['DEFAULT'] + values)})")
-                
-                # If we have reached max_records or the last row, insert the rows
-                if len(all_rows) == batch_size or row_number == mssql_cursor.rowcount - 1:
+                all_rows.append(f"({','.join(['DEFAULT', row_hash] + values)})")
+                            
+                # If we have reached max_records, insert the rows
+                if len(all_rows) == batch_size:
                     insert_rows(mysql_cursor, table, columns, all_rows, f)
                     all_rows = []
                 progress_count += 1
-                
+                            
                 # Print/update progress bar
-                populate_progress(table, progress_count, mssql_rowcount, tableIndex, batch_size, total_tables)
-                
-            # print a full progress bar once all rows are done
-            populate_progress(table, mssql_rowcount, mssql_rowcount, tableIndex, batch_size, total_tables)
+                populate_progress(table, progress_count, mssql_rowcount, tableIndex, batch_size, total_tables, "Populating table")
+                            
+            # After the loop ends, insert any remaining records in all_rows
+            if len(all_rows) > 0:
+                insert_rows(mysql_cursor, table, columns, all_rows, f)
+                all_rows = []
+
+            # Print a full progress bar once all rows are done
+            populate_progress(table, mssql_rowcount, mssql_rowcount, tableIndex, batch_size, total_tables, "Completed")
             sys.stdout.write("\n")
             sys.stdout.flush()
 
+            
     mysql_cursor.close()
     mysql_conn.close()
     mssql_cursor.close()
     mssql_conn.close()
 
     print("Tables populated successfully!")
+

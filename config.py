@@ -1,5 +1,6 @@
 # config.py
-# Microsoft SQL Server connection settings
+
+# Microsoft SQL Server connection parameters
 odbc_driver = {
     1: '{FreeTDS}',
     2: '{ODBC Driver 17 for SQL Server}',
@@ -7,26 +8,31 @@ odbc_driver = {
 }
 
 mssql_driver = odbc_driver[2]
-mssql_server = "192.168.1.165"
-mssql_db = "protel"
-mssql_schema = "proteluser"
+mssql_server = "."
+mssql_port = 1433
+mssql_encrypt = "yes"
+mssql_trust_cert = "yes"
+mssql_db = "GanddalGaveogInterirASGLOBALData"
+mssql_schema = "GanddalGaveogInterirAS"
 mssql_user = "sa"
 mssql_password = "Syndicate4!"
 
 
-# mySQL Server connection settings
+# mySQL Server connection parameters
 mysql_server = "orion"
 mysql_user = "root"
 mysql_password = "(Volvo90V)"
 mysql_database = mssql_db
 
-# Maximum number of records per INSERT statement
+
+# Operating parameters
+# Processing batch size
 batch_size = 1000
 
 # Maximum varchar size before converting to text data type
 maxVarchar = 1000
 
-# Define a dictionary to map data types between MSSQL and MySQL
+# Data type mapping between MSSQL and MySQL (mssql = mysql)
 data_type_map = {
     'bigint': 'bigint',
     'binary': 'binary',
