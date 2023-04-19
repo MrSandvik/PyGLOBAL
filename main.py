@@ -19,7 +19,7 @@ def main(force, repopulate, update, diff, tables_to_process, where_clause):
     if update:
         mode = "update"
     
-    populate.populate_tables(mode, tables_to_process)
+    populate.populate_tables(mode, tables_to_process, force)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Command line arguments:')

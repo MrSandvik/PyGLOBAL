@@ -7,7 +7,7 @@ from functions import validate_data, format_value, insert_rows, populate_progres
 
 total_tables = 0
 
-def populate_tables(mode, tables_to_process = None):
+def populate_tables(mode, tables_to_process = None, force = False):
 
     mysql_conn = database.connect_to_mysql()
     mysql_cursor = mysql_conn.cursor()
@@ -78,7 +78,7 @@ def populate_tables(mode, tables_to_process = None):
             all_rows = []
             progress_count = 0
             for row_number, row in enumerate(mssql_cursor.fetchall()):
-                populate_progress(table, progress_count, mssql_rowcount, tableIndex, batch_size, total_tables, "Checking table")            
+
                 try:
                     row_hash = get_row_hash(row)
                     validate_data(table, row_number, columns, mssql_data_types, row)
@@ -86,9 +86,11 @@ def populate_tables(mode, tables_to_process = None):
                     f.write(f"Validation error: {str(e)}\n")
                     continue
 
-                # Check if the row already exists, and if so, skip it
-                if check_existing(mysql_cursor, table, row_hash, f):
-                    continue
+                if force == False:
+                    # Check if the row already exists, and if so, skip it
+                    populate_progress(table, progress_count, mssql_rowcount, tableIndex, batch_size, total_tables, "Checking table")            
+                    if check_existing(mysql_cursor, table, row_hash, f):
+                        continue
 
                 values = []
                 for idx, value in enumerate(row):
