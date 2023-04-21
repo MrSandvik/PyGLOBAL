@@ -33,7 +33,13 @@ def is_valid_value(value, mssql_data_type):
         return True
 
 
-def check_existing(mysql_cursor, table, row_hash, f):
+def check_existing(mysql_cursor, table, row_hashes, f):
+    mysql_cursor.execute(f"SELECT `MyChecksum` FROM {table} WHERE `MyChecksum` IN ({','.join(map(lambda x: '%s', row_hashes))})", row_hashes)
+    existing_hashes = {row[0] for row in mysql_cursor.fetchall()}
+    return [hash_value in existing_hashes for hash_value in row_hashes]
+
+
+def check_existing2(mysql_cursor, table, row_hash, f):
     mysql_cursor.execute(f"SELECT COUNT(*) FROM `{table}` WHERE `MyChecksum` = {row_hash};")
     count = mysql_cursor.fetchone()[0]
     return count > 0
@@ -64,7 +70,7 @@ def format_value(value, columns, mssql_cursor, idx):
         # Split the text into 10,000 character chunks
         chunks = [value[i:i + 10000] for i in range(0, len(value), 10000)]
         # Add each chunk to the list of values
-        return ','.join([f"'{chunk}'" for chunk in chunks])
+        return f"'{''.join([chunk for chunk in chunks])}'"
 
     # dates/datetimes
     elif re.match(r'\d{4}-\d{2}-\d{2}', str(value)):
@@ -89,15 +95,15 @@ def format_value(value, columns, mssql_cursor, idx):
 def insert_rows(mysql_cursor, table, columns, rows, f):
     # Construct the insert query
     insert_query = f"INSERT INTO `{table}` ({','.join(['myPK', 'MyChecksum'] + [column.split()[0] for column in columns])}) VALUES {','.join(rows)}"
+    f.write(f"L-1: Inserting batch of {len(rows)} rows into {table}\n")
     try:
         # Execute the insert query
         mysql_cursor.execute(insert_query)
         mysql_cursor.connection.commit()
-        f.write(f"Inserted {len(rows)} rows into {table}\n")
     except Exception as e:
         mysql_cursor.connection.rollback()
-        f.write(f"Error inserting into {table}: {str(e)}\n")
-        f.write(f"Query: \n {insert_query}\n\n")
+        f.write(f"L-3: Error inserting into {table}: {str(e)}\n")
+        f.write(f"     Query: \n     {insert_query}\n\n")
         mysql_cursor.close()
         mysql_cursor.connection.close()
         print("Error inserting data into MySQL. Terminating execution.")
@@ -144,3 +150,6 @@ def populate_progress(table, current, total, tableIndex, batch_size, total_table
     sys.stdout.write('\r' + ' ' * len(progress_str) + '\r')
     sys.stdout.write(progress_str)
     sys.stdout.flush()
+
+
+## Tables.py functions

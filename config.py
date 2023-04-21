@@ -27,7 +27,7 @@ mysql_database = mssql_db
 
 # Operating parameters
 # Processing batch size
-batch_size = 1000
+batch_size = 300
 
 # Maximum varchar size before converting to text data type
 maxVarchar = 1000

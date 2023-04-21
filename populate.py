@@ -52,7 +52,7 @@ def populate_tables(mode, tables_to_process = None, force = False):
     with open('log.txt', 'a') as f:
         for index, table in enumerate(tables_to_populate, start=1):
 
-            f.write(f"Populating table: {table}...\n")
+            f.write(f"L-0: Populating table: {table}...\n")
 
             # Fetching number of records in current table
             mssql_cursor.execute(f"SELECT COUNT(*) FROM {mssql_db}.{mssql_schema}.{table};")
@@ -77,42 +77,65 @@ def populate_tables(mode, tables_to_process = None, force = False):
             tableIndex = index
             all_rows = []
             progress_count = 0
-            for row_number, row in enumerate(mssql_cursor.fetchall()):
+            row_hashes = []
+            rows_data = []
 
+            for row_number, row in enumerate(mssql_cursor.fetchall()):
                 try:
                     row_hash = get_row_hash(row)
                     validate_data(table, row_number, columns, mssql_data_types, row)
                 except ValueError as e:
-                    f.write(f"Validation error: {str(e)}\n")
+                    f.write(f"L-3: Validation error: {str(e)}\n")
                     continue
 
-                if force == False:
-                    # Check if the row already exists, and if so, skip it
-                    populate_progress(table, progress_count, mssql_rowcount, tableIndex, batch_size, total_tables, "Checking table")            
-                    if check_existing(mysql_cursor, table, row_hash, f):
-                        continue
+                if not force:
+                    # Store row hashes and rows in temporary lists
+                    row_hashes.append(row_hash)
+                    rows_data.append(row)
 
-                values = []
-                for idx, value in enumerate(row):
-                    values.append(format_value(value, columns, mssql_cursor, idx))
-                all_rows.append(f"({','.join(['DEFAULT', row_hash] + values)})")
-                            
+                    # Check if the row already exists in batches
+                    if len(row_hashes) == batch_size:
+                        populate_progress(table, progress_count, mssql_rowcount, tableIndex, batch_size, total_tables, "Checking table")
+                        existing_rows = check_existing(mysql_cursor, table, row_hashes, f)
+                        for i, exists in enumerate(existing_rows):
+                            if not exists:
+                                row = rows_data[i]
+                                values = [format_value(value, columns, mssql_cursor, idx) for idx, value in enumerate(row)]
+                                all_rows.append(f"({','.join(['DEFAULT', row_hashes[i]] + values)})")
+                                progress_count += 1
+
+                        # Reset temporary lists
+                        row_hashes = []
+                        rows_data = []
+                else:
+                    values = [format_value(value, columns, mssql_cursor, idx) for idx, value in enumerate(row)]
+                    all_rows.append(f"({','.join(['DEFAULT', row_hash] + values)})")
+                    progress_count += 1
+
                 # If we have reached max_records, insert the rows
                 if len(all_rows) == batch_size:
                     insert_rows(mysql_cursor, table, columns, all_rows, f)
                     all_rows = []
-                progress_count += 1
-                            
-                # Print/update progress bar
+
                 populate_progress(table, progress_count, mssql_rowcount, tableIndex, batch_size, total_tables, "Populating table")
-                            
-            # After the loop ends, insert any remaining records in all_rows
-            if len(all_rows) > 0:
+
+            # Check for remaining rows
+            if not force and row_hashes:
+                populate_progress(table, progress_count, mssql_rowcount, tableIndex, batch_size, total_tables, "Checking table")
+                existing_rows = check_existing(mysql_cursor, table, row_hashes, f)
+                for i, exists in enumerate(existing_rows):
+                    if not exists:
+                        row = rows_data[i]
+                        values = [format_value(value, columns, mssql_cursor, idx) for idx, value in enumerate(row)]
+                        all_rows.append(f"({','.join(['DEFAULT', row_hashes[i]] + values)})")
+                        progress_count += 1
+
+            # Insert remaining rows
+            if all_rows:
                 insert_rows(mysql_cursor, table, columns, all_rows, f)
                 all_rows = []
 
-            # Print a full progress bar once all rows are done
-            populate_progress(table, mssql_rowcount, mssql_rowcount, tableIndex, batch_size, total_tables, "Completed")
+            populate_progress(table, progress_count, mssql_rowcount, tableIndex, batch_size, total_tables, "Completed")
             sys.stdout.write("\n")
             sys.stdout.flush()
 
