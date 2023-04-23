@@ -3,7 +3,7 @@
 import sys
 import database
 from config import mssql_schema, mysql_database, data_type_map, maxVarchar
-
+from functions import drop_and_create_database
 
 def start(force=False, tables_to_process=None):
     mysql_conn = database.connect_to_mysql()
@@ -26,6 +26,7 @@ def start(force=False, tables_to_process=None):
 
         # Set tables_to_create to all tables
         tables_to_create = [table[0] for table in mssql_cursor.execute(f"SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE' AND TABLE_SCHEMA = '{mssql_schema}' ORDER BY TABLE_NAME;")]
+        tables_to_drop = []
     else:
         if tables_to_process is None:
             tables_to_create, tables_to_drop = run_consistency_check(mssql_cursor, mysql_cursor)
@@ -43,23 +44,12 @@ def start(force=False, tables_to_process=None):
                 mysql_cursor.execute(f"DROP TABLE IF EXISTS `{table}`;")
 
     if tables_to_create is not None:
-        create_tables(mysql_cursor, mssql_cursor, tables_to_create)
+        create_tables(mysql_cursor, mssql_cursor, tables_to_create, tables_to_drop, force)
 
     mysql_cursor.close()
     mysql_conn.close()
 
     return tables_to_create
-
-
-def drop_and_create_database(mysql_cursor):
-    mysql_cursor.execute("SET FOREIGN_KEY_CHECKS = 0;")
-    mysql_cursor.execute(f"DROP DATABASE IF EXISTS {mysql_database};")
-    mysql_cursor.execute("SET FOREIGN_KEY_CHECKS = 1;")
-    
-    # Create the database
-    mysql_cursor.execute(f"CREATE DATABASE {mysql_database};")
-    mysql_cursor.execute(f"USE {mysql_database};")
-    print(f"Created database {mysql_database}")
 
 
 def run_consistency_check(mssql_cursor, mysql_cursor, tables_to_process=None):
@@ -92,6 +82,11 @@ def run_consistency_check(mssql_cursor, mysql_cursor, tables_to_process=None):
                 mysql_cursor.execute(f"SELECT COLUMN_NAME, DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{table.lower()}' AND TABLE_SCHEMA = '{mysql_database.lower()}' AND COLUMN_NAME NOT IN ('myPK', 'myChecksum');")
                 mysql_columns = [(column[0], column[1]) for column in mysql_cursor.fetchall()]
                 
+                # Update MSSQL columns data types to match MySQL if required
+                for i, ((mssql_col, mssql_dtype), (mysql_col, mysql_dtype)) in enumerate(zip(mssql_columns, mysql_columns)):
+                    if (mssql_dtype in ('varchar', 'nvarchar') and mysql_dtype == 'text'):
+                        mssql_columns[i] = (mssql_col, 'text')
+
                 if set(mssql_columns) != set(mysql_columns):
                     #input(f"\n\n---\n{mssql_columns}\n---\n>")
                     tables_to_drop.append(table)
@@ -124,12 +119,14 @@ def print_progress(current, total, tables, title):
     sys.stdout.flush()
 
 
-def create_tables(mysql_cursor, mssql_cursor, tables_to_create):
+def create_tables(mysql_cursor, mssql_cursor, tables_to_create, tables_to_drop, force):
     table_count = len(tables_to_create)
     table_index = 0
 
     with open('log.txt', 'w') as f:
         for table in tables_to_create:
+            if table in tables_to_drop:
+                mysql_cursor.execute(f"DROP TABLE IF EXISTS `{table}`;")
             f.write(f"L-0: Processing table {table}\n")
             mssql_cursor.execute(f"SELECT COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, NUMERIC_PRECISION, NUMERIC_SCALE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{table}' AND TABLE_SCHEMA = '{mssql_schema}';")
             columns = []
@@ -183,7 +180,7 @@ def create_tables(mysql_cursor, mssql_cursor, tables_to_create):
                 index_exists = mysql_cursor.fetchone()[0] > 0
 
                 # Drop the index if it exists
-                if index_exists:
+                if index_exists and force == False:
                     drop_index_query = f"DROP INDEX `{index_name[:64]}` ON `{table.lower()}`"
                     f.write(f"L-2: Dropping existing index {index_name[:64]} with query: {drop_index_query}\n")
                     mysql_cursor.execute(drop_index_query)

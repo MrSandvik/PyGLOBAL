@@ -153,3 +153,13 @@ def populate_progress(table, current, total, tableIndex, batch_size, total_table
 
 
 ## Tables.py functions
+
+def drop_and_create_database(mysql_cursor):
+    mysql_cursor.execute("SET FOREIGN_KEY_CHECKS = 0;")
+    mysql_cursor.execute(f"DROP DATABASE IF EXISTS {mysql_database};")
+    mysql_cursor.execute("SET FOREIGN_KEY_CHECKS = 1;")
+    
+    # Create the database
+    mysql_cursor.execute(f"CREATE DATABASE {mysql_database};")
+    mysql_cursor.execute(f"USE {mysql_database};")
+    print(f"Created database {mysql_database}")

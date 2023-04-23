@@ -8,12 +8,12 @@ odbc_driver = {
 }
 
 mssql_driver = odbc_driver[2]
-mssql_server = "192.168.1.165"
+mssql_server = "Orion"
 mssql_port = 1433
 mssql_encrypt = "yes"
 mssql_trust_cert = "yes"
-mssql_db = "protel"
-mssql_schema = "proteluser"
+mssql_db = "MarLogASGLOBALData"
+mssql_schema = "MarLogAS"
 mssql_user = "sa"
 mssql_password = "Syndicate4!"
 
