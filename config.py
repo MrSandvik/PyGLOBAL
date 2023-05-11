@@ -19,7 +19,7 @@ mssql_password = "Syndicate4!"
 
 
 # mySQL Server connection parameters
-mysql_server = "orion"
+mysql_server = "127.0.0.1"
 mysql_user = "root"
 mysql_password = "(Volvo90V)"
 mysql_database = mssql_db

@@ -1,0 +1,71 @@
+#sidebar-nav {
+    width: 15vw;
+}
+
+.my-menu-toggle {
+    width: min-content;
+    top: 0px !important;
+    left: 0px !important;
+  }
+
+.myTable1 {
+    border-collapse: collapse;
+    border-spacing: 0;
+    padding: 0;
+    width: 90%;
+    margin-left: 5%;
+  }
+  
+  .myTable1 tr {
+    border-style: none;
+  }
+
+  .myTable1 td, .myTable1 th {
+    padding: 1px;
+    border-style: none;
+  }
+  
+  .myTable1 input[type="text"] {
+    padding: 0px 8px 0px 2px !important;
+    border: 1px solid transparent;
+    background-color: #eef;
+    border-radius: 2px;
+  }
+  
+  .myTable1 input[type="text"]:focus {
+    outline: none;
+    box-shadow: none;
+    background-color: lightyellow;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+  }
+  
+  .myTable2 {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 90%;
+    margin-left: 5%;
+  }
+  
+  .myTable2 td, .myTable2 th {
+    padding: 1px;
+  }
+  
+  .myTable2 input[type="text"] {
+    padding: 0px 1px 0px 1px;
+    border: none;
+    background-color: #eef;
+    border-radius: 2px;
+  }
+  
+  .myTable2 input[type="text"]:focus {
+    outline: none;
+    box-shadow: none;
+    background-color: lightyellow;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+  }
+  
+  .myTable2 tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+  }

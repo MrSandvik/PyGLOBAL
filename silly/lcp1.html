@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piskel Animation</title>
+    <style>
+        #animation {
+            position: relative;
+            display: inline-block;
+        }
+
+        .frame {
+            position: absolute;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="animation"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="cswap.js?v=1"></script>
+    <script src="lcp1.js?v=1"></script>
+
+    <div>
+        <script>
+            loadPiskelJson("Peep.piskel", {
+                scalingMultiplier: 5,
+                // frameDelay: 1000,
+                //accent1: "#fffffff",
+                //accent2: "#0044ff",
+                //hair: "#cccccc",
+                // skin: "#568982",
+                //outline: "#777777",
+                //head: "2"
+            });
+        </script>
+    </div>
+    <div style="border: 1px solid; display: inline-block;">
+        <script>
+            loadPiskelJson("Peep.piskel", {
+                scalingMultiplier: 5,
+                frameDelay: 700,
+                accent1: "#6060ff",
+                accent2: "#70c770",
+                // hair: "#cccccc",
+                // skin: "#568982",
+                // outline: "#337777",
+                head: "4tA"
+            });
+        </script>
+    </div>
+    <div style="border: 1px solid; display: inline-block;">
+        <script>
+            loadPiskelJson("Peep.piskel", {
+                scalingMultiplier: 5,
+                frameDelay: 800,
+                accent1: "#04e288",
+                accent2: "#880000",
+                // hair: "#cccccc",
+                // skin: "#568982",
+                // outline: "#337777",
+                head: "4tI",
+                //orientation: "right"
+            });
+        </script>
+    </div>
+    <div style="border: 1px solid; display: inline-block;">
+        <script>
+            loadPiskelJson("Peep.piskel", {
+                scalingMultiplier: 5,
+                frameDelay: 800,
+                accent1: "#ff3c88",
+                accent2: "#111199f",
+                // hair: "#cccccc",
+                // skin: "#568982",
+                // outline: "#337777",
+                head: "4tO"
+            });
+        </script>
+    </div>
+</body>
+
+</html>

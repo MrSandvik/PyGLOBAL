@@ -1,0 +1,32 @@
+        /* Remove top and bottom padding from table rows */
+        table.dataTable tbody td {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        /* Add 1px vertical gridlines */
+        table.dataTable td {
+            border-left: 1px solid #dedede;
+        }
+
+        /* Remove border and shadow from filter input boxes */
+        table.dataTable thead  {
+            border-left: 1px solid red;
+            padding-left: 3px;
+            box-shadow: none;
+            background-color: #f0f0f0;
+        }
+
+        tr.my-search {
+            background-color: #c1c1fc;
+        }
+
+        th.my-search {
+            border-left: 1px solid #dedede;
+        }
+        input.my-search {
+            background-color: transparent;
+            box-shadow: none;
+            border: none;
+            width: 8vw;
+        }

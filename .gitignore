@@ -1,4 +1,5 @@
 .vscode
+core
 __pycache__
 desktop.ini
 log.txt

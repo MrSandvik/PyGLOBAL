@@ -146,6 +146,9 @@ def create_tables(mysql_cursor, mssql_cursor, tables_to_create, tables_to_drop, 
                 elif mysql_data_type == 'binary':
                     mysql_data_type = f'binary({column[2]})' if column[2] else 'binary'
                 elif mysql_data_type == 'varbinary':
+                    if column[2]:
+                        if column[2] == -1 or column[2] > maxVarchar:
+                            column[2] = maxVarchar
                     mysql_data_type = f'varbinary({column[2]})' if column[2] else 'varbinary'
                 elif mysql_data_type == 'decimal':
                     precision = column[3]
