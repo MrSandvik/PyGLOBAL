@@ -1,0 +1,3001 @@
+{
+    "fullResultSize": 44,
+    "from": 0,
+    "count": 44,
+    "versionDigest": "'If-None-Match' header not specified",
+    "values": [
+        {
+            "id": 31523245,
+            "version": 0,
+            "url": "tripletex.no/v2/customer/31523245",
+            "name": "Sola Strand Hotel",
+            "organizationNumber": "938799679",
+            "supplierNumber": 0,
+            "customerNumber": 100001,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "faktura@sola-strandhotel.no",
+            "invoiceEmail": "faktura@sola-strandhotel.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "32010550318"
+            ],
+            "phoneNumber": "(+47) 51 94 30 00",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Sola Strand Hotel (100001)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "LINK",
+            "postalAddress": {
+                "id": 93890960,
+                "url": "tripletex.no/v2/address/93890960"
+            },
+            "physicalAddress": {
+                "id": 93890961,
+                "url": "tripletex.no/v2/address/93890961"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "32010550318",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": false,
+            "isAutomaticReminderEnabled": false,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523246,
+            "version": 2,
+            "url": "tripletex.no/v2/customer/31523246",
+            "name": "\u00d8vsteb\u00f8 Eiendom AS",
+            "organizationNumber": "990637555",
+            "supplierNumber": 0,
+            "customerNumber": 100002,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "anne.turid@doe.no",
+            "invoiceEmail": "anne.turid@doe.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "96881049772"
+            ],
+            "phoneNumber": "(+47) 901 71 349",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "\u00d8vsteb\u00f8 Eiendom AS (100002)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EHF",
+            "emailAttachmentType": "ATTACHMENT",
+            "postalAddress": {
+                "id": 93890963,
+                "url": "tripletex.no/v2/address/93890963"
+            },
+            "physicalAddress": {
+                "id": 93890964,
+                "url": "tripletex.no/v2/address/93890964"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "96881049772",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                },
+                {
+                    "iban": "",
+                    "bban": "96881049772",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "AUTOPAY"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": false,
+            "isAutomaticReminderEnabled": false,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523247,
+            "version": 1,
+            "url": "tripletex.no/v2/customer/31523247",
+            "name": "Anlegg og Marine Service AS",
+            "organizationNumber": "977250722",
+            "supplierNumber": 0,
+            "customerNumber": 100003,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "hh@anlegg-marine.no",
+            "invoiceEmail": "hh@anlegg-marine.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "60610630181"
+            ],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Anlegg og Marine Service AS (100003)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EHF",
+            "emailAttachmentType": "ATTACHMENT",
+            "postalAddress": {
+                "id": 93890966,
+                "url": "tripletex.no/v2/address/93890966"
+            },
+            "physicalAddress": {
+                "id": 93890967,
+                "url": "tripletex.no/v2/address/93890967"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "60610630181",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                },
+                {
+                    "iban": "",
+                    "bban": "60610630181",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "AUTOPAY"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": true,
+            "isAutomaticReminderEnabled": true,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523248,
+            "version": 0,
+            "url": "tripletex.no/v2/customer/31523248",
+            "name": "ORG Geophysical AS",
+            "organizationNumber": "983824331",
+            "supplierNumber": 0,
+            "customerNumber": 100004,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "jtk@orgengineering.no",
+            "invoiceEmail": "jtk@orgengineering.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "ORG Geophysical AS (100004)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "LINK",
+            "postalAddress": {
+                "id": 93890969,
+                "url": "tripletex.no/v2/address/93890969"
+            },
+            "physicalAddress": {
+                "id": 93890970,
+                "url": "tripletex.no/v2/address/93890970"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": false,
+            "isAutomaticReminderEnabled": false,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523249,
+            "version": 1,
+            "url": "tripletex.no/v2/customer/31523249",
+            "name": "Bitmap AS",
+            "organizationNumber": "877675122",
+            "supplierNumber": 0,
+            "customerNumber": 100005,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "tina@bitmap.no",
+            "invoiceEmail": "tina@bitmap.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Bitmap AS (100005)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EHF",
+            "emailAttachmentType": "LINK",
+            "postalAddress": {
+                "id": 93890971,
+                "url": "tripletex.no/v2/address/93890971"
+            },
+            "physicalAddress": {
+                "id": 93890972,
+                "url": "tripletex.no/v2/address/93890972"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": true,
+            "isAutomaticReminderEnabled": true,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523250,
+            "version": 3,
+            "url": "tripletex.no/v2/customer/31523250",
+            "name": "Barra AS",
+            "organizationNumber": "910425757",
+            "supplierNumber": 0,
+            "customerNumber": 100006,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "post@barra.no",
+            "invoiceEmail": "post@barra.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "82000123044"
+            ],
+            "phoneNumber": "482 40 957",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Barra AS (100006)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EHF",
+            "emailAttachmentType": "ATTACHMENT",
+            "postalAddress": {
+                "id": 93890973,
+                "url": "tripletex.no/v2/address/93890973"
+            },
+            "physicalAddress": {
+                "id": 93890974,
+                "url": "tripletex.no/v2/address/93890974"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "82000123044",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                },
+                {
+                    "iban": "",
+                    "bban": "82000123044",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "AUTOPAY"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": true,
+            "isAutomaticReminderEnabled": true,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 10.0
+        },
+        {
+            "id": 31523251,
+            "version": 1,
+            "url": "tripletex.no/v2/customer/31523251",
+            "name": "Sverdrup Steel AS",
+            "organizationNumber": "862380592",
+            "supplierNumber": 0,
+            "customerNumber": 100007,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "invoice@sverdrupsteel.com",
+            "invoiceEmail": "invoice@sverdrupsteel.com",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "81601282690"
+            ],
+            "phoneNumber": "51 81 69 00",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Sverdrup Steel AS (100007)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EHF",
+            "emailAttachmentType": "LINK",
+            "postalAddress": {
+                "id": 93890976,
+                "url": "tripletex.no/v2/address/93890976"
+            },
+            "physicalAddress": {
+                "id": 93890977,
+                "url": "tripletex.no/v2/address/93890977"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "81601282690",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                },
+                {
+                    "iban": "",
+                    "bban": "81601282690",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "AUTOPAY"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": false,
+            "isAutomaticReminderEnabled": false,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523252,
+            "version": 0,
+            "url": "tripletex.no/v2/customer/31523252",
+            "name": "Stiftinga J\u00e6rmuseet",
+            "organizationNumber": "971098767",
+            "supplierNumber": 0,
+            "customerNumber": 100008,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "che@jaermuseet.no",
+            "invoiceEmail": "che@jaermuseet.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "33350703409"
+            ],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Stiftinga J\u00e6rmuseet (100008)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "LINK",
+            "postalAddress": {
+                "id": 93890979,
+                "url": "tripletex.no/v2/address/93890979"
+            },
+            "physicalAddress": {
+                "id": 93890980,
+                "url": "tripletex.no/v2/address/93890980"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "33350703409",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": false,
+            "isAutomaticReminderEnabled": false,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523253,
+            "version": 0,
+            "url": "tripletex.no/v2/customer/31523253",
+            "name": "Module Solutions & Systems AS",
+            "organizationNumber": "983228488",
+            "supplierNumber": 0,
+            "customerNumber": 100010,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "reidun.fjogstad@modulesolutions.no",
+            "invoiceEmail": "reidun.fjogstad@modulesolutions.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "32062112114"
+            ],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Module Solutions & Systems AS (100010)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "LINK",
+            "postalAddress": {
+                "id": 93890981,
+                "url": "tripletex.no/v2/address/93890981"
+            },
+            "physicalAddress": {
+                "id": 93890982,
+                "url": "tripletex.no/v2/address/93890982"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "32062112114",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": false,
+            "isAutomaticReminderEnabled": false,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523254,
+            "version": 1,
+            "url": "tripletex.no/v2/customer/31523254",
+            "name": "A\u00b2+B LLP",
+            "organizationNumber": "",
+            "supplierNumber": 0,
+            "customerNumber": 100011,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "helen.wood@aab.co.uk",
+            "invoiceEmail": "helen.wood@aab.co.uk",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "EN",
+            "displayName": "A\u00b2+B LLP (100011)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "ATTACHMENT",
+            "postalAddress": {
+                "id": 93890984,
+                "url": "tripletex.no/v2/address/93890984"
+            },
+            "physicalAddress": {
+                "id": 93890985,
+                "url": "tripletex.no/v2/address/93890985"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 6,
+                "url": "tripletex.no/v2/currency/6"
+            },
+            "bankAccountPresentation": [],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": true,
+            "isAutomaticReminderEnabled": true,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523255,
+            "version": 1,
+            "url": "tripletex.no/v2/customer/31523255",
+            "name": "O. H. B\u00f8e & S\u00f8nner AS",
+            "organizationNumber": "981648463",
+            "supplierNumber": 0,
+            "customerNumber": 100012,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "ohb@faktura.poweroffice.net",
+            "invoiceEmail": "ohb@faktura.poweroffice.net",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "96870535470"
+            ],
+            "phoneNumber": "(+47) 51 46 36 00",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "O. H. B\u00f8e & S\u00f8nner AS (100012)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EHF",
+            "emailAttachmentType": "ATTACHMENT",
+            "postalAddress": {
+                "id": 93890987,
+                "url": "tripletex.no/v2/address/93890987"
+            },
+            "physicalAddress": {
+                "id": 93890988,
+                "url": "tripletex.no/v2/address/93890988"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "96870535470",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                },
+                {
+                    "iban": "",
+                    "bban": "96870535470",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "AUTOPAY"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": true,
+            "isAutomaticReminderEnabled": true,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523256,
+            "version": 0,
+            "url": "tripletex.no/v2/customer/31523256",
+            "name": "it:Avdelingen AS",
+            "organizationNumber": "982935954",
+            "supplierNumber": 0,
+            "customerNumber": 100013,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "post@itavdelingen.no",
+            "invoiceEmail": "post@itavdelingen.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "32902115624"
+            ],
+            "phoneNumber": "(+47) 51 60 78 00",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "it:Avdelingen AS (100013)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "LINK",
+            "postalAddress": {
+                "id": 93890990,
+                "url": "tripletex.no/v2/address/93890990"
+            },
+            "physicalAddress": {
+                "id": 93890991,
+                "url": "tripletex.no/v2/address/93890991"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "32902115624",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": false,
+            "isAutomaticReminderEnabled": false,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523258,
+            "version": 2,
+            "url": "tripletex.no/v2/customer/31523258",
+            "name": "Subsea 7 Norway AS",
+            "organizationNumber": "936742475",
+            "supplierNumber": 0,
+            "customerNumber": 100015,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "Norgeinvoicing@subsea7.com",
+            "invoiceEmail": "Norgeinvoicing@subsea7.com",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "83011015517"
+            ],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Subsea 7 Norway AS (100015)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "ATTACHMENT",
+            "postalAddress": {
+                "id": 93890994,
+                "url": "tripletex.no/v2/address/93890994"
+            },
+            "physicalAddress": {
+                "id": 93890995,
+                "url": "tripletex.no/v2/address/93890995"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "83011015517",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                },
+                {
+                    "iban": "",
+                    "bban": "83011015517",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "AUTOPAY"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": true,
+            "isAutomaticReminderEnabled": true,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523259,
+            "version": 0,
+            "url": "tripletex.no/v2/customer/31523259",
+            "name": "Xfiber AS",
+            "organizationNumber": "981603621",
+            "supplierNumber": 0,
+            "customerNumber": 100016,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "xfiber@invoicedrop.com",
+            "invoiceEmail": "xfiber@invoicedrop.com",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [],
+            "phoneNumber": "(+47) 51 22 75 06",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Xfiber AS (100016)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "LINK",
+            "postalAddress": {
+                "id": 93890997,
+                "url": "tripletex.no/v2/address/93890997"
+            },
+            "physicalAddress": {
+                "id": 93890998,
+                "url": "tripletex.no/v2/address/93890998"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": false,
+            "isAutomaticReminderEnabled": false,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523260,
+            "version": 0,
+            "url": "tripletex.no/v2/customer/31523260",
+            "name": "Amesto Solutions AS",
+            "organizationNumber": "990171432",
+            "supplierNumber": 0,
+            "customerNumber": 100017,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "guttorm.stangeland@amesto.no",
+            "invoiceEmail": "guttorm.stangeland@amesto.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [],
+            "phoneNumber": "(+47) 815 68 200",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Amesto Solutions AS (100017)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "LINK",
+            "postalAddress": {
+                "id": 93890999,
+                "url": "tripletex.no/v2/address/93890999"
+            },
+            "physicalAddress": {
+                "id": 93891000,
+                "url": "tripletex.no/v2/address/93891000"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": false,
+            "isAutomaticReminderEnabled": false,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523261,
+            "version": 2,
+            "url": "tripletex.no/v2/customer/31523261",
+            "name": "Ganddal Gave og Interi\u00f8r AS",
+            "organizationNumber": "989484516",
+            "supplierNumber": 0,
+            "customerNumber": 100018,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "post@casa-nova.no",
+            "invoiceEmail": "post@casa-nova.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "63400511197"
+            ],
+            "phoneNumber": "94019396",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Ganddal Gave og Interi\u00f8r AS (100018)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "ATTACHMENT",
+            "postalAddress": {
+                "id": 93891001,
+                "url": "tripletex.no/v2/address/93891001"
+            },
+            "physicalAddress": {
+                "id": 93891002,
+                "url": "tripletex.no/v2/address/93891002"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "63400511197",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                },
+                {
+                    "iban": "",
+                    "bban": "63400511197",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "AUTOPAY"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": true,
+            "isAutomaticReminderEnabled": true,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 17.0
+        },
+        {
+            "id": 31523262,
+            "version": 2,
+            "url": "tripletex.no/v2/customer/31523262",
+            "name": "Best Western Havly Hotell",
+            "organizationNumber": "917350418",
+            "supplierNumber": 0,
+            "customerNumber": 100019,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "billing@godtnok.com",
+            "invoiceEmail": "billing@godtnok.com",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "32012784359"
+            ],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Best Western Havly Hotell (100019)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EHF",
+            "emailAttachmentType": "ATTACHMENT",
+            "postalAddress": {
+                "id": 93891004,
+                "url": "tripletex.no/v2/address/93891004"
+            },
+            "physicalAddress": {
+                "id": 93891005,
+                "url": "tripletex.no/v2/address/93891005"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "32012784359",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                },
+                {
+                    "iban": "",
+                    "bban": "32012784359",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "AUTOPAY"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": true,
+            "isAutomaticReminderEnabled": true,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523264,
+            "version": 7,
+            "url": "tripletex.no/v2/customer/31523264",
+            "name": "Norsk Filmtrykk AS",
+            "organizationNumber": "946768316",
+            "supplierNumber": 0,
+            "customerNumber": 100021,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "gulli@norskfilmtrykk.no",
+            "invoiceEmail": "gulli@norskfilmtrykk.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "81600639889"
+            ],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Norsk Filmtrykk AS (100021)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EHF",
+            "emailAttachmentType": "ATTACHMENT",
+            "postalAddress": {
+                "id": 93891009,
+                "url": "tripletex.no/v2/address/93891009"
+            },
+            "physicalAddress": {
+                "id": 93891010,
+                "url": "tripletex.no/v2/address/93891010"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 21,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "81600639889",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                },
+                {
+                    "iban": "",
+                    "bban": "81600639889",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "AUTOPAY"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": true,
+            "isAutomaticReminderEnabled": true,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 10.0
+        },
+        {
+            "id": 31523265,
+            "version": 4,
+            "url": "tripletex.no/v2/customer/31523265",
+            "name": "IT Service AS",
+            "organizationNumber": "923639497",
+            "supplierNumber": 0,
+            "customerNumber": 100022,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "faktura@itservice.no",
+            "invoiceEmail": "faktura@itservice.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "60260555300"
+            ],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "IT Service AS (100022)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EHF",
+            "emailAttachmentType": "ATTACHMENT",
+            "postalAddress": {
+                "id": 93891012,
+                "url": "tripletex.no/v2/address/93891012"
+            },
+            "physicalAddress": {
+                "id": 93891013,
+                "url": "tripletex.no/v2/address/93891013"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "60260555300",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                },
+                {
+                    "iban": "",
+                    "bban": "60260555300",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "AUTOPAY"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": true,
+            "isAutomaticReminderEnabled": true,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523266,
+            "version": 3,
+            "url": "tripletex.no/v2/customer/31523266",
+            "name": "L. R\u00f8dne & S\u00f8nner AS",
+            "organizationNumber": "937505884",
+            "supplierNumber": 0,
+            "customerNumber": 100023,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "faktura@rodne.no",
+            "invoiceEmail": "faktura@rodne.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "32300507661"
+            ],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "L. R\u00f8dne & S\u00f8nner AS (100023)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EHF",
+            "emailAttachmentType": "ATTACHMENT",
+            "postalAddress": {
+                "id": 93891014,
+                "url": "tripletex.no/v2/address/93891014"
+            },
+            "physicalAddress": {
+                "id": 93891015,
+                "url": "tripletex.no/v2/address/93891015"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "32300507661",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                },
+                {
+                    "iban": "",
+                    "bban": "32300507661",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "AUTOPAY"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": true,
+            "isAutomaticReminderEnabled": true,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523267,
+            "version": 0,
+            "url": "tripletex.no/v2/customer/31523267",
+            "name": "Rogaland Musikkr\u00e5d",
+            "organizationNumber": "974249839",
+            "supplierNumber": 0,
+            "customerNumber": 100024,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "bodvild.solheim@musikk.no",
+            "invoiceEmail": "bodvild.solheim@musikk.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [],
+            "phoneNumber": "(+47) 51 84 66 55",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Rogaland Musikkr\u00e5d (100024)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "LINK",
+            "postalAddress": {
+                "id": 93891017,
+                "url": "tripletex.no/v2/address/93891017"
+            },
+            "physicalAddress": {
+                "id": 93891018,
+                "url": "tripletex.no/v2/address/93891018"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": false,
+            "isAutomaticReminderEnabled": false,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523268,
+            "version": 1,
+            "url": "tripletex.no/v2/customer/31523268",
+            "name": "Albatross Industries AS",
+            "organizationNumber": "989657992",
+            "supplierNumber": 0,
+            "customerNumber": 100025,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "christoffer.m@albatross-industries.no",
+            "invoiceEmail": "christoffer.m@albatross-industries.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [],
+            "phoneNumber": "(+47) 51 71 69 00",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Albatross Industries AS (100025)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "ATTACHMENT",
+            "postalAddress": {
+                "id": 93891020,
+                "url": "tripletex.no/v2/address/93891020"
+            },
+            "physicalAddress": {
+                "id": 93891021,
+                "url": "tripletex.no/v2/address/93891021"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": true,
+            "isAutomaticReminderEnabled": true,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523269,
+            "version": 0,
+            "url": "tripletex.no/v2/customer/31523269",
+            "name": "ORG Engineering AS",
+            "organizationNumber": "981166957",
+            "supplierNumber": 0,
+            "customerNumber": 100026,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "wli@orgengineering.no",
+            "invoiceEmail": "wli@orgengineering.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "ORG Engineering AS (100026)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "LINK",
+            "postalAddress": {
+                "id": 93891023,
+                "url": "tripletex.no/v2/address/93891023"
+            },
+            "physicalAddress": {
+                "id": 93891024,
+                "url": "tripletex.no/v2/address/93891024"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": false,
+            "isAutomaticReminderEnabled": false,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523270,
+            "version": 1,
+            "url": "tripletex.no/v2/customer/31523270",
+            "name": "Byrkjedalstunet AS",
+            "organizationNumber": "989762699",
+            "supplierNumber": 0,
+            "customerNumber": 100027,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "post@doe.no",
+            "invoiceEmail": "post@doe.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Byrkjedalstunet AS (100027)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EHF",
+            "emailAttachmentType": "ATTACHMENT",
+            "postalAddress": {
+                "id": 93891025,
+                "url": "tripletex.no/v2/address/93891025"
+            },
+            "physicalAddress": {
+                "id": 93891026,
+                "url": "tripletex.no/v2/address/93891026"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": true,
+            "isAutomaticReminderEnabled": true,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523271,
+            "version": 0,
+            "url": "tripletex.no/v2/customer/31523271",
+            "name": "Kronengruppen AS",
+            "organizationNumber": "989249770",
+            "supplierNumber": 0,
+            "customerNumber": 100028,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "therese@kronenhotels.no",
+            "invoiceEmail": "therese@kronenhotels.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Kronengruppen AS (100028)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "LINK",
+            "postalAddress": {
+                "id": 93891028,
+                "url": "tripletex.no/v2/address/93891028"
+            },
+            "physicalAddress": {
+                "id": 93891029,
+                "url": "tripletex.no/v2/address/93891029"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": false,
+            "isAutomaticReminderEnabled": false,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523272,
+            "version": 1,
+            "url": "tripletex.no/v2/customer/31523272",
+            "name": "First IT AS",
+            "organizationNumber": "990551561",
+            "supplierNumber": 0,
+            "customerNumber": 100029,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "rt@firstit.no",
+            "invoiceEmail": "rt@firstit.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "95260552229"
+            ],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "First IT AS (100029)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "ATTACHMENT",
+            "postalAddress": {
+                "id": 93891031,
+                "url": "tripletex.no/v2/address/93891031"
+            },
+            "physicalAddress": {
+                "id": 93891032,
+                "url": "tripletex.no/v2/address/93891032"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "95260552229",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                },
+                {
+                    "iban": "",
+                    "bban": "95260552229",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "AUTOPAY"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": true,
+            "isAutomaticReminderEnabled": true,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523273,
+            "version": 2,
+            "url": "tripletex.no/v2/customer/31523273",
+            "name": "Norganic AS",
+            "organizationNumber": "984155913",
+            "supplierNumber": 900029,
+            "customerNumber": 100030,
+            "isSupplier": true,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "faktura@norganic.no",
+            "invoiceEmail": "faktura@norganic.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "32016212503"
+            ],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Norganic AS (100030/900029)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EHF",
+            "emailAttachmentType": "ATTACHMENT",
+            "postalAddress": {
+                "id": 93891034,
+                "url": "tripletex.no/v2/address/93891034"
+            },
+            "physicalAddress": {
+                "id": 93891035,
+                "url": "tripletex.no/v2/address/93891035"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "32016212503",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                },
+                {
+                    "iban": "",
+                    "bban": "32016212503",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "AUTOPAY"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": true,
+            "isAutomaticReminderEnabled": true,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523274,
+            "version": 1,
+            "url": "tripletex.no/v2/customer/31523274",
+            "name": "Mantle Analytics AS",
+            "organizationNumber": "919391081",
+            "supplierNumber": 0,
+            "customerNumber": 100031,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "ll@mantleanalytics.com",
+            "invoiceEmail": "ll@mantleanalytics.com",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "32052453290"
+            ],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Mantle Analytics AS (100031)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EHF",
+            "emailAttachmentType": "ATTACHMENT",
+            "postalAddress": {
+                "id": 93891037,
+                "url": "tripletex.no/v2/address/93891037"
+            },
+            "physicalAddress": {
+                "id": 93891038,
+                "url": "tripletex.no/v2/address/93891038"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "32052453290",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                },
+                {
+                    "iban": "",
+                    "bban": "32052453290",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "AUTOPAY"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": true,
+            "isAutomaticReminderEnabled": true,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523275,
+            "version": 1,
+            "url": "tripletex.no/v2/customer/31523275",
+            "name": "A.S. Holding AS",
+            "organizationNumber": "917865175",
+            "supplierNumber": 0,
+            "customerNumber": 100032,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "christoffer.m@albatross-industries.no",
+            "invoiceEmail": "christoffer.m@albatross-industries.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "32016712115"
+            ],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "A.S. Holding AS (100032)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "ATTACHMENT",
+            "postalAddress": {
+                "id": 93891040,
+                "url": "tripletex.no/v2/address/93891040"
+            },
+            "physicalAddress": {
+                "id": 93891041,
+                "url": "tripletex.no/v2/address/93891041"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "32016712115",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                },
+                {
+                    "iban": "",
+                    "bban": "32016712115",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "AUTOPAY"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": true,
+            "isAutomaticReminderEnabled": true,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523276,
+            "version": 0,
+            "url": "tripletex.no/v2/customer/31523276",
+            "name": "Rogaland Granitt AS",
+            "organizationNumber": "993168297",
+            "supplierNumber": 0,
+            "customerNumber": 100033,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "oc@oh-boe.no",
+            "invoiceEmail": "oc@oh-boe.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "96870535470"
+            ],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Rogaland Granitt AS (100033)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "LINK",
+            "postalAddress": {
+                "id": 93891043,
+                "url": "tripletex.no/v2/address/93891043"
+            },
+            "physicalAddress": {
+                "id": 93891044,
+                "url": "tripletex.no/v2/address/93891044"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "96870535470",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": false,
+            "isAutomaticReminderEnabled": false,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523277,
+            "version": 0,
+            "url": "tripletex.no/v2/customer/31523277",
+            "name": "Veni AS",
+            "organizationNumber": "999615678",
+            "supplierNumber": 0,
+            "customerNumber": 100034,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "veni@ebilag.com",
+            "invoiceEmail": "veni@ebilag.com",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "32015945388"
+            ],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Veni AS (100034)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "LINK",
+            "postalAddress": {
+                "id": 93891046,
+                "url": "tripletex.no/v2/address/93891046"
+            },
+            "physicalAddress": {
+                "id": 93891047,
+                "url": "tripletex.no/v2/address/93891047"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "32015945388",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": false,
+            "isAutomaticReminderEnabled": false,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523278,
+            "version": 1,
+            "url": "tripletex.no/v2/customer/31523278",
+            "name": "Braasten Sko AS",
+            "organizationNumber": "934214617",
+            "supplierNumber": 0,
+            "customerNumber": 100035,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "sandnes@skoringen.no",
+            "invoiceEmail": "sandnes@skoringen.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "15031853246"
+            ],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Braasten Sko AS (100035)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "ATTACHMENT",
+            "postalAddress": {
+                "id": 93891049,
+                "url": "tripletex.no/v2/address/93891049"
+            },
+            "physicalAddress": {
+                "id": 93891050,
+                "url": "tripletex.no/v2/address/93891050"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "15031853246",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                },
+                {
+                    "iban": "",
+                    "bban": "15031853246",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "AUTOPAY"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": true,
+            "isAutomaticReminderEnabled": true,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523279,
+            "version": 0,
+            "url": "tripletex.no/v2/customer/31523279",
+            "name": "Rush Trampolinepark",
+            "organizationNumber": "916359667",
+            "supplierNumber": 0,
+            "customerNumber": 100036,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "nicolas@rushtrampolinepark.no",
+            "invoiceEmail": "nicolas@rushtrampolinepark.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "32072922300"
+            ],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Rush Trampolinepark (100036)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "LINK",
+            "postalAddress": {
+                "id": 93891052,
+                "url": "tripletex.no/v2/address/93891052"
+            },
+            "physicalAddress": {
+                "id": 93891053,
+                "url": "tripletex.no/v2/address/93891053"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "32072922300",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": false,
+            "isAutomaticReminderEnabled": false,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523280,
+            "version": 0,
+            "url": "tripletex.no/v2/customer/31523280",
+            "name": "St\u00f8tvig Hotel AS",
+            "organizationNumber": "999215211",
+            "supplierNumber": 0,
+            "customerNumber": 100037,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "faktura@stotvighotel.com",
+            "invoiceEmail": "faktura@stotvighotel.com",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "15033154671"
+            ],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "St\u00f8tvig Hotel AS (100037)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "LINK",
+            "postalAddress": {
+                "id": 93891055,
+                "url": "tripletex.no/v2/address/93891055"
+            },
+            "physicalAddress": {
+                "id": 93891056,
+                "url": "tripletex.no/v2/address/93891056"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "15033154671",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": false,
+            "isAutomaticReminderEnabled": false,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523281,
+            "version": 0,
+            "url": "tripletex.no/v2/customer/31523281",
+            "name": "Monetor AS",
+            "organizationNumber": "913523032",
+            "supplierNumber": 0,
+            "customerNumber": 100038,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "henric@monetor.no",
+            "invoiceEmail": "henric@monetor.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "15034604050"
+            ],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Monetor AS (100038)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "LINK",
+            "postalAddress": {
+                "id": 93891058,
+                "url": "tripletex.no/v2/address/93891058"
+            },
+            "physicalAddress": {
+                "id": 93891059,
+                "url": "tripletex.no/v2/address/93891059"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "15034604050",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": false,
+            "isAutomaticReminderEnabled": false,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523282,
+            "version": 1,
+            "url": "tripletex.no/v2/customer/31523282",
+            "name": "Systempartner International AS",
+            "organizationNumber": "961351766",
+            "supplierNumber": 0,
+            "customerNumber": 100039,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "jan.erik.aale@spi.no",
+            "invoiceEmail": "jan.erik.aale@spi.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "70770524766"
+            ],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Systempartner International AS (100039)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EHF",
+            "emailAttachmentType": "LINK",
+            "postalAddress": {
+                "id": 93891060,
+                "url": "tripletex.no/v2/address/93891060"
+            },
+            "physicalAddress": {
+                "id": 93891061,
+                "url": "tripletex.no/v2/address/93891061"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "70770524766",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                },
+                {
+                    "iban": "",
+                    "bban": "70770524766",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "AUTOPAY"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": false,
+            "isAutomaticReminderEnabled": false,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523283,
+            "version": 3,
+            "url": "tripletex.no/v2/customer/31523283",
+            "name": "Aase Landbruk AS",
+            "organizationNumber": "959980454",
+            "supplierNumber": 0,
+            "customerNumber": 100040,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "post@aase-landbruk.as",
+            "invoiceEmail": "post@aase-landbruk.as",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "63400517403"
+            ],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Aase Landbruk AS (100040)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EHF",
+            "emailAttachmentType": "ATTACHMENT",
+            "postalAddress": {
+                "id": 93891063,
+                "url": "tripletex.no/v2/address/93891063"
+            },
+            "physicalAddress": {
+                "id": 93891064,
+                "url": "tripletex.no/v2/address/93891064"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "63400517403",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                },
+                {
+                    "iban": "",
+                    "bban": "63400517403",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "AUTOPAY"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": true,
+            "isAutomaticReminderEnabled": true,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523284,
+            "version": 1,
+            "url": "tripletex.no/v2/customer/31523284",
+            "name": "MarLog AS",
+            "organizationNumber": "977275938",
+            "supplierNumber": 0,
+            "customerNumber": 100041,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "accounts@marlog.no",
+            "invoiceEmail": "accounts@marlog.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "54130592220"
+            ],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "MarLog AS (100041)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EHF",
+            "emailAttachmentType": "ATTACHMENT",
+            "postalAddress": {
+                "id": 93891066,
+                "url": "tripletex.no/v2/address/93891066"
+            },
+            "physicalAddress": {
+                "id": 93891067,
+                "url": "tripletex.no/v2/address/93891067"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 30,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "54130592220",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                },
+                {
+                    "iban": "",
+                    "bban": "54130592220",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "AUTOPAY"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": true,
+            "isAutomaticReminderEnabled": true,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523285,
+            "version": 0,
+            "url": "tripletex.no/v2/customer/31523285",
+            "name": "Stiftelsen Norsk Selvhjelpsforum",
+            "organizationNumber": "980495361",
+            "supplierNumber": 0,
+            "customerNumber": 100042,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "fakturastiftelsen@temaregnskap.no",
+            "invoiceEmail": "fakturastiftelsen@temaregnskap.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [
+                "16440410816"
+            ],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Stiftelsen Norsk Selvhjelpsforum (100042)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "LINK",
+            "postalAddress": {
+                "id": 93891069,
+                "url": "tripletex.no/v2/address/93891069"
+            },
+            "physicalAddress": {
+                "id": 93891070,
+                "url": "tripletex.no/v2/address/93891070"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [
+                {
+                    "iban": "",
+                    "bban": "16440410816",
+                    "bic": "",
+                    "country": {
+                        "id": 161,
+                        "url": "tripletex.no/v2/country/161"
+                    },
+                    "provider": "NETS"
+                }
+            ],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": false,
+            "isAutomaticReminderEnabled": false,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523286,
+            "version": 0,
+            "url": "tripletex.no/v2/customer/31523286",
+            "name": "Mellemstrand AS",
+            "organizationNumber": "835981002",
+            "supplierNumber": 0,
+            "customerNumber": 100043,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "marianne@mellemstrand.no",
+            "invoiceEmail": "marianne@mellemstrand.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Mellemstrand AS (100043)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "LINK",
+            "postalAddress": {
+                "id": 93891072,
+                "url": "tripletex.no/v2/address/93891072"
+            },
+            "physicalAddress": {
+                "id": 93891073,
+                "url": "tripletex.no/v2/address/93891073"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": false,
+            "isAutomaticReminderEnabled": false,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523287,
+            "version": 1,
+            "url": "tripletex.no/v2/customer/31523287",
+            "name": "AS Shinshout.com",
+            "organizationNumber": "926561839",
+            "supplierNumber": 0,
+            "customerNumber": 100044,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "asshinshoutcom@ebilag.com",
+            "invoiceEmail": "asshinshoutcom@ebilag.com",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "AS Shinshout.com (100044)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "ATTACHMENT",
+            "postalAddress": {
+                "id": 93891075,
+                "url": "tripletex.no/v2/address/93891075"
+            },
+            "physicalAddress": {
+                "id": 93891076,
+                "url": "tripletex.no/v2/address/93891076"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": true,
+            "isAutomaticReminderEnabled": true,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 31523288,
+            "version": 0,
+            "url": "tripletex.no/v2/customer/31523288",
+            "name": "Stord Hotell AS",
+            "organizationNumber": "921207905",
+            "supplierNumber": 0,
+            "customerNumber": 100045,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": null,
+            "email": "sonja.sandtorv@stord-hotel.no",
+            "invoiceEmail": "sonja.sandtorv@stord-hotel.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Stord Hotell AS (100045)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "LINK",
+            "postalAddress": {
+                "id": 93891077,
+                "url": "tripletex.no/v2/address/93891077"
+            },
+            "physicalAddress": {
+                "id": 93891078,
+                "url": "tripletex.no/v2/address/93891078"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": false,
+            "isAutomaticReminderEnabled": false,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 50282854,
+            "version": 1,
+            "url": "tripletex.no/v2/customer/50282854",
+            "name": "Aase Investering AS",
+            "organizationNumber": "961308151",
+            "supplierNumber": 0,
+            "customerNumber": 100046,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": {
+                "id": 3720444,
+                "url": "tripletex.no/v2/employee/3720444"
+            },
+            "email": "",
+            "invoiceEmail": "post@casa-nova.no",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [],
+            "phoneNumber": "",
+            "phoneNumberMobile": "",
+            "description": "",
+            "language": "NO",
+            "displayName": "Aase Investering AS (100046)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EMAIL",
+            "emailAttachmentType": "ATTACHMENT",
+            "postalAddress": {
+                "id": 151323382,
+                "url": "tripletex.no/v2/address/151323382"
+            },
+            "physicalAddress": {
+                "id": 151323383,
+                "url": "tripletex.no/v2/address/151323383"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": false,
+            "isAutomaticReminderEnabled": false,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        },
+        {
+            "id": 52330867,
+            "version": 1,
+            "url": "tripletex.no/v2/customer/52330867",
+            "name": "QA Resources AS",
+            "organizationNumber": "960624610",
+            "supplierNumber": 0,
+            "customerNumber": 100047,
+            "isSupplier": false,
+            "isCustomer": true,
+            "isInactive": false,
+            "accountManager": {
+                "id": 3720444,
+                "url": "tripletex.no/v2/employee/3720444"
+            },
+            "email": "",
+            "invoiceEmail": "",
+            "overdueNoticeEmail": "",
+            "bankAccounts": [],
+            "phoneNumber": "",
+            "phoneNumberMobile": "922 44 763",
+            "description": "",
+            "language": "NO",
+            "displayName": "QA Resources AS (100047)",
+            "isPrivateIndividual": false,
+            "singleCustomerInvoice": false,
+            "invoiceSendMethod": "EHF",
+            "emailAttachmentType": "ATTACHMENT",
+            "postalAddress": {
+                "id": 156113116,
+                "url": "tripletex.no/v2/address/156113116"
+            },
+            "physicalAddress": {
+                "id": 156113117,
+                "url": "tripletex.no/v2/address/156113117"
+            },
+            "deliveryAddress": null,
+            "category1": null,
+            "category2": null,
+            "category3": null,
+            "invoicesDueIn": 14,
+            "invoicesDueInType": "DAYS",
+            "currency": {
+                "id": 1,
+                "url": "tripletex.no/v2/currency/1"
+            },
+            "bankAccountPresentation": [],
+            "ledgerAccount": {
+                "id": 82882568,
+                "url": "tripletex.no/v2/ledger/account/82882568"
+            },
+            "isFactoring": false,
+            "invoiceSendSMSNotification": false,
+            "isAutomaticSoftReminderEnabled": false,
+            "isAutomaticReminderEnabled": false,
+            "isAutomaticNoticeOfDebtCollectionEnabled": false,
+            "discountPercentage": 0.0
+        }
+    ]
+}

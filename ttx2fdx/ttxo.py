@@ -20,6 +20,7 @@ token_file = "token.pkl"
 if os.path.exists(token_file):
     with open(token_file, "rb") as f:
         data = pickle.load(f)
+        print(data)
     if data["expirationDate"] > datetime.datetime.now():
         sessionToken = data["sessionToken"]
         print(f"Using existing token, expiring on {data['expirationDate']}: {sessionToken}\n\n")
@@ -52,7 +53,7 @@ headers = {
 }
 
 # API-parameters to retrieve record for customerNumber 100030
-url_to_get_customer = URL #+ "/customer?customerNumber=100030"
+url_to_get_customer = URL + "/customer?customerNumber=100030"
 
 response = requests.get(url_to_get_customer, headers=headers)
 
@@ -63,6 +64,37 @@ response.raise_for_status()
 APIResponse2 = response.json()
 
 pretty_json = json.dumps(APIResponse2, indent=4)
-cusfile = "cus.txt"
-with open(cusfile, "w") as c:
-    c.write(pretty_json)
+#print(pretty_json)
+
+# Prepare the data for the new order
+new_order = {
+    "customer": {
+        "customerNumber": 100001,
+        "name": "Sola Strand Hotel"
+    },
+    "orderLines": [
+        {
+            "product": {"id": 1000},
+            "description": "This is a test",
+            "count": 1
+        }
+    ],
+    "orderDate": datetime.datetime.now().isoformat(),
+    "deliveryDate": datetime.datetime.now().isoformat()
+}
+
+# Convert the Python dictionary to a JSON string
+new_order_json = json.dumps(new_order)
+
+# Create the new order
+order_endpoint = URL + "/order"
+response = requests.post(order_endpoint, headers=headers, data=new_order_json)
+print(f"HEADERS>> {response.headers}\n\n")
+print(f"REASON>> {response.reason}\n\n")
+print(f"TEXT {response.text}\n\n")
+
+# Raise an exception if the request was unsuccessful
+response.raise_for_status()
+
+# Print the response from the API
+print("New order created:", response.json())
